@@ -1,5 +1,4 @@
 import React, {Component} from "react";
-import Tile from "./tile"
 
 class Row extends Component {
 //Here each row contains 3 tiles 

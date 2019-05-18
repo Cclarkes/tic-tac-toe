@@ -1,4 +1,5 @@
 import React, {Component} from "react";
+import "./styles/app.css"
 
 class Tile extends Component {
     constructor(props){
@@ -17,7 +18,7 @@ class Tile extends Component {
                 this.setState((state => ({textValue: "X"})))
                 :
                 this.setState((state => ({textValue: "O"})))
-                
+
             this.setState((state => ({clicked: true})))
             this.props.handleClick();
         }
@@ -27,9 +28,9 @@ class Tile extends Component {
     //Here we have a single square that reacts to click events.
     render() {
         return(
-            <button className="square" onClick={this.clicked}>
+            <div className="square" onClick={this.clicked}>
             <p className="clicked?">{this.state.textValue}</p>
-            </button>
+            </div>
         )
     }
 }
