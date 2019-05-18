@@ -19,7 +19,6 @@ constructor(props) {
 
   handleClick = (e) => {
     if(this.state.player === 1) {
-      e.target.value = "X";
       this.setState(state => ({player: 2}))
     } else {
       this.setState(state => ({player: 1}))
