@@ -6,7 +6,7 @@ class Tile extends Component {
         super(props)
     this.state = {
         player: this.props.player,
-        textValue: "Click!",
+        textValue: "",
         clicked: false,
     }
     this.clicked = this.clicked.bind(this);

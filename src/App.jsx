@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './App.css';
+import './components/styles/app.css';
 import Board from "./components/board";
 
 class App extends Component {
@@ -29,7 +29,7 @@ constructor(props) {
   
   render() {
     return (
-      <div className="App">
+      <div className="app">
       <h1>Tic Tac Toe Exercise</h1>
       <p> Player {this.state.player}'s Turn! </p> 
         <Board 

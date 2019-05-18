@@ -1,6 +1,5 @@
 .app {
-    display: flex;
-    justify-content: center;
+    text-align: center;
     align-items: center;
 }
 
@@ -16,14 +15,17 @@
 
 .square {
     display: flex;
-    background: #fff;
     flex-flow: row wrap;
     box-sizing: border-box;
     border: 1px solid #999;
     justify-content: center;
     align-items: center;
-    float: none;
     height: 100px;
     text-align: center;
     width: 100px;
+}
+
+.square:hover {
+    cursor: pointer;
+    background-color: silver;
 }
