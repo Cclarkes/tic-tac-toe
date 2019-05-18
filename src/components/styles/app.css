@@ -1,11 +1,17 @@
+.app {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .board {
     display: flex;
     justify-content: flex-start;
     border: 1px solid;
-    background-color: midnightblue;
     flex-flow: row wrap;
-    height: 600px;
-    width: 600px;
+    margin: auto;
+    height: 300px;
+    width: 300px;
 }
 
 .square {
@@ -17,7 +23,7 @@
     justify-content: center;
     align-items: center;
     float: none;
-    height: 200px;
+    height: 100px;
     text-align: center;
-    width: 200px;
+    width: 100px;
 }

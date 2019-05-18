@@ -6,7 +6,7 @@ class Board extends Component {
     //Here I am creating a single board that houses all tile components
     render() {
         return(
-            <div className="Board">
+            <div className="board">
                 <Tile handleClick={this.props.handleClick}
                     player={this.props.player}
                 />
