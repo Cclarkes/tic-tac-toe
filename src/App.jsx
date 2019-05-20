@@ -7,26 +7,58 @@ class App extends Component {
   //and maintain a state determining whose turn it is, and handle click
   //logic for buttons pressed.
   
-constructor(props) {
-  super(props);
-  this.state = {
-    turn: true,
-    player: 1
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      player: 1,
+      squares: [null, null, null, null, null, null, null, null, null],
+      victory: null
+    }
   }
 
-  this.handleClick = this.handleClick.bind(this);
-}
+  componentDidUpdate() {
+  this.checkForVictory();
+  }
 
-  handleClick = (e) => {
+  handleClick = (i, player) => {
+    this.setState((state => (this.state.squares.splice(i, 1, player))))
     if(this.state.player === 1) {
       this.setState(state => ({player: 2}))
     } else {
       this.setState(state => ({player: 1}))
     };
-
-    // this.checkTurn();
   }
-  
+
+  checkForVictory = () => {
+    const board = this.state.squares;
+
+    if (
+      (board[0] === "X" && board[1] === "X" && board[2] === "X") ||
+      (board[3] === "X" && board[4] === "X" && board[5] === "X") ||
+      (board[6] === "X" && board[7] === "X" && board[8] === "X") ||
+      (board[0] === "X" && board[3] === "X" && board[6] === "X") ||
+      (board[1] === "X" && board[4] === "X" && board[7] === "X") ||
+      (board[2] === "X" && board[5] === "X" && board[8] === "X") ||
+      (board[0] === "X" && board[4] === "X" && board[8] === "X") ||
+      (board[2] === "X" && board[4] === "X" && board[6] === "X") 
+    ) {
+        console.log("Player 1 Victory!");
+      }
+    else if (
+      (board[0] === "O" && board[1] === "O" && board[2] === "O") ||
+      (board[3] === "O" && board[4] === "O" && board[5] === "O") ||
+      (board[6] === "O" && board[7] === "O" && board[8] === "O") ||
+      (board[0] === "O" && board[3] === "O" && board[6] === "O") ||
+      (board[1] === "O" && board[4] === "O" && board[7] === "O") ||
+      (board[2] === "O" && board[5] === "O" && board[8] === "O") ||
+      (board[0] === "O" && board[4] === "O" && board[8] === "O") ||
+      (board[2] === "O" && board[4] === "O" && board[6] === "O") 
+    ) {
+        console.log("Player 2 Victory!");
+      }
+  }
+
   render() {
     return (
       <div className="app">

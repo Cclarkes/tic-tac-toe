@@ -4,25 +4,27 @@ import "./styles/app.css"
 class Tile extends Component {
     constructor(props){
         super(props)
-    this.state = {
-        player: this.props.player,
-        textValue: "",
-        clicked: false,
-    }
-    this.clicked = this.clicked.bind(this);
+
+        this.state = {
+            player: this.props.player,
+            textValue: "",
+            clicked: false,
+        }
+        this.clicked = this.clicked.bind(this);
 }
 
     clicked = () => {
         if(this.state.clicked === false) {
-            this.props.player === 1 ?
-                this.setState((state => ({textValue: "X"})))
-                :
-                this.setState((state => ({textValue: "O"})))
-
-            this.setState((state => ({clicked: true})))
-            this.props.handleClick();
+            if(this.props.player === 1) {
+                this.setState({textValue: "X", clicked: true})
+                console.log(this.state.textValue);
+                this.props.handleClick(this.props.value, "X")
+            } else {
+                this.setState({textValue: "O", clicked: true})
+                console.log(this.state.textValue);
+                this.props.handleClick(this.props.value, "O")
+            }
         }
-        console.log(this.state.textValue, this.state.clicked);
     }
 
     //Here we have a single square that reacts to click events.
