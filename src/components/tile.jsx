@@ -11,7 +11,7 @@ class Tile extends Component {
             clicked: false,
         }
         this.clicked = this.clicked.bind(this);
-}
+    }
 
     clicked = () => {
         if(this.state.clicked === false) {

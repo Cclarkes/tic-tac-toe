@@ -12,8 +12,7 @@ class App extends Component {
 
     this.state = {
       player: 1,
-      squares: [null, null, null, null, null, null, null, null, null],
-      victory: null
+      squares: [null, null, null, null, null, null, null, null, null]
     }
   }
 
@@ -21,8 +20,8 @@ class App extends Component {
   this.checkForVictory();
   }
 
-  handleClick = (i, player) => {
-    this.setState((state => (this.state.squares.splice(i, 1, player))))
+  handleClick = (square, player) => {
+    this.setState((state => (this.state.squares.splice(square, 1, player))))
     if(this.state.player === 1) {
       this.setState(state => ({player: 2}))
     } else {
@@ -43,7 +42,7 @@ class App extends Component {
       (board[0] === "X" && board[4] === "X" && board[8] === "X") ||
       (board[2] === "X" && board[4] === "X" && board[6] === "X") 
     ) {
-        console.log("Player 1 Victory!");
+        alert("Player 1 Victory!")
       }
     else if (
       (board[0] === "O" && board[1] === "O" && board[2] === "O") ||
@@ -55,18 +54,19 @@ class App extends Component {
       (board[0] === "O" && board[4] === "O" && board[8] === "O") ||
       (board[2] === "O" && board[4] === "O" && board[6] === "O") 
     ) {
-        console.log("Player 2 Victory!");
-      }
+        alert("Player 2 Victory!")
+      };
   }
 
   render() {
     return (
       <div className="app">
-      <h1>Tic Tac Toe Exercise</h1>
+      <h1>Tic Tac Toe</h1>
       <p> Player {this.state.player}'s Turn! </p> 
         <Board 
         handleClick={this.handleClick}
         player={this.state.player}
+        victory={this.state.victory}
         />
       </div>
     );

@@ -10,8 +10,12 @@ constructor(props) {
 this.createSquare = this.createSquare.bind(this);
 }
     createSquare = (i) => {
-        return <Tile value={i} player={this.props.player} handleClick={this.props.handleClick}/>
-      }
+        return <Tile
+        value={i}
+        player={this.props.player}
+        handleClick={this.props.handleClick}
+        victory={this.props.victory}/>
+    }
 
     render() {
         return(
