@@ -1,4 +1,4 @@
-#Tic-Tac-Toe
+# Tic-Tac-Toe
 
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
 
@@ -18,7 +18,7 @@ Once somebody completes a
 * And run the app locally.
   `npm start`
 
-##Functionality
+## Functionality
 
 Upon page load player 1 begins by making the first move. After they click a square,
 an X is left and player 2 is made to choose their box. As with any tic-tac-toe game,
@@ -26,7 +26,7 @@ the first player to achieve 3 X's or O's in a horizontal, vertical, or diagonal 
 wins and the user is then alerted of their victory. After that point, you must reload
 the page and begin again.
 
-##Lessons Learned
+## Lessons Learned
 
 I spent more time on the flexbox than I would have liked, so my CSS skills could
 certainly use some work. Otherwise I got some good practice with react especially with
@@ -35,7 +35,7 @@ the functions in app.js, but called them in subordinate componenents. However, b
 they were defined on the higher level, and because I included parameters, I was able to
 pass local state values up to parent components.
 
-##What I would have done with more time
+## What I would have done with more time
 
 * I'm not really happy with the way my victory conditions were laid out. I feel like it's
 much too verbose, and there's definitely a better way to verify all 8 victory conditions
