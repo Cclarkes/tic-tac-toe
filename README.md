@@ -6,7 +6,9 @@ It's an app that was created after a (roughly) combined 5 hours of work both in 
 
 To play, simply open the app as detailed below and find somebody to compete with.
 Each click will fill a box with either an X, or an O, depending on the turn.
-Once somebody completes a 
+Once somebody completes a row, column, or diagonal cross they win!
+![Screenshot](https://github.com/Cclarkes/tic-tac-toe/blob/master/public/Screenshot.png)
+
 ## Installation
 
 * Clone the repository,
